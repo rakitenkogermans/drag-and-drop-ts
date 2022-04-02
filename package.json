@@ -1,0 +1,10 @@
+{
+  "name": "typescript-learning",
+  "version": "1.0.0",
+  "description": "Drag and drop typescript project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  }
+}
