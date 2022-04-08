@@ -126,6 +126,10 @@ const projectState = ProjectState.getInstance();
 class ProjectItem extends ProjectComponent<HTMLUListElement, HTMLLIElement> {
     private project: Project;
 
+    get persons() {
+        return this.project.people === 1 ? '1 Person' : `${this.project.people} Persons`;
+    }
+
     constructor(hostId: string, project: Project) {
         super('#single-project', hostId, false, project.id);
         this.project = project;
@@ -137,7 +141,7 @@ class ProjectItem extends ProjectComponent<HTMLUListElement, HTMLLIElement> {
     configure() {};
     renderContent() {
         this.element.querySelector('h2')!.textContent = this.project.title;
-        this.element.querySelector('h3')!.textContent = this.project.people.toString();
+        this.element.querySelector('h3')!.textContent = this.persons + ' assigned';
         this.element.querySelector('p')!.textContent = this.project.description;
     };
 }
